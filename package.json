@@ -1,8 +1,14 @@
 {
-  "name": "wearAangularApp",
+  "name": "wearangularapp",
   "main": "./src/main.ts",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "ns run android --device 1",
+    "debug": "ns run android --device 1",
+    "debug-android-live": "ns livesync android --device 1 --watch",
+    "debug-android-connect": "adb connect 192.168.0.111:5555"
+  },
   "dependencies": {
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",
@@ -15,12 +21,14 @@
     "@nativescript/angular": "^13.0.0",
     "@nativescript/core": "~8.2.0",
     "@nativescript/theme": "~3.0.2",
+    "nativescript-insomnia": "^2.0.0",
     "rxjs": "~7.5.0",
     "zone.js": "~0.11.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.0",
     "@angular/compiler-cli": "~13.2.0",
+    "@nativescript/android": "8.2.2",
     "@nativescript/types": "~8.2.0",
     "@nativescript/webpack": "~5.0.6",
     "@ngtools/webpack": "~13.2.0",

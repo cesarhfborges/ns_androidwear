@@ -1,3 +1,21 @@
+<!--<ActionBar style="text-align: center;" title="Hello World"> </ActionBar>-->
+<ActionBar>
+  <StackLayout orientation="horizontal">
+    <image src="res://icon" width="40" height="40" verticalAlignment="center"></image>
+    <label text="ActionBar Title" fontSize="24" verticalAlignment="center"></label>
+  </StackLayout>
+</ActionBar>
+<GridLayout>
+  <ListView [items]="items">
+    <ng-template let-item="item">
+      <StackLayout [nsRouterLink]="['/item', item.id]">
+        <Label [text]="item.name"></Label>
+<!--        <Switch checked="true"></Switch>-->
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
+
 <!--
 The template defines the view of the component - what is actually rendered.
 In NativeScript applications the template is defined with XML using NativeScript UI elements.
@@ -9,10 +27,7 @@ So you can still use template expressions, bindings, templates as well as all th
 <!--
 The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 http://docs.nativescript.org/ui/action-bar
--->
-<ActionBar title="My App"> </ActionBar>
 
-<!--
 The GridLayout arranges its child elements in a table structure of rows and columns.
 A cell can contain multiple child elements, they can span over multiple rows and columns,
 and even overlap each other. The GridLayout has one column and one row by default.
@@ -22,12 +37,3 @@ These components make use of the NativeScript core theme, which styles them with
 The theme also provides a set of helper class names such as p-20, h1, h2, and text-center to enhance styling.
 You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
 -->
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
